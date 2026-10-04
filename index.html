@@ -586,6 +586,19 @@
         flex: 0 0 130px;
       }
     }
+  
+    /* Dos tiendas: Virtual Keys + Virtual Games */
+    .duo{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .duo a{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:14px;border-radius:16px;text-decoration:none;color:#fff;box-shadow:0 6px 18px rgba(0,0,0,.12);opacity:0;animation:slideUp .6s var(--spring) forwards;transition:transform .22s var(--spring),box-shadow .22s var(--spring)}
+    .duo a:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.16)}
+    .duo a:focus-visible{outline:3px solid #1d1d1f;outline-offset:2px}
+    .duo .vk{background:linear-gradient(135deg,#0062FC,#0049c2)}
+    .duo .vg{background:linear-gradient(135deg,#FF3B30,#D70015);animation-delay:.08s}
+    .duo img{width:44px;height:44px;border-radius:11px;display:block}
+    .duo b{font-size:16px;font-weight:700;line-height:1.1}
+    .duo .sub{font-size:12.5px;opacity:.9;line-height:1.25}
+    .duo .go{font-size:12px;font-weight:700;background:rgba(255,255,255,.18);padding:5px 9px;border-radius:999px;margin-top:2px}
+    .product-cta{font-size:12px;font-weight:700;color:var(--accent)}
   </style>
 </head>
 <body>
@@ -632,30 +645,21 @@
     <!-- LINKS -->
     <nav class="links" aria-label="Links principales">
 
-      <!-- Button 1 — Ir a la Tienda -->
-      <a
-        href="https://virtualkeys.store"
-        class="btn btn-primary"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Ir a la Tienda de virtualkeys.store"
-      >
-        <span class="btn-icon" aria-hidden="true">
-          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
-            <line x1="3" y1="6" x2="21" y2="6"/>
-            <path d="M16 10a4 4 0 0 1-8 0"/>
-          </svg>
-        </span>
-        <span class="btn-label">Ir a la Tienda</span>
-        <span class="btn-chevron" aria-hidden="true">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-               stroke="currentColor" stroke-width="2.5"
-               stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="9 18 15 12 9 6"/>
-          </svg>
-        </span>
-      </a>
+      <!-- Dos tiendas: Virtual Keys y Virtual Games -->
+      <div class="duo">
+        <a class="vk" href="https://virtualkeys.store" target="_blank" rel="noopener noreferrer" aria-label="Ir a Virtual Keys, tienda de software original">
+          <img src="https://cdn.shopify.com/s/files/1/0720/6925/1288/files/logo_rrss.png?v=1753904358" alt="" width="44" height="44" />
+          <b>Virtual Keys</b>
+          <span class="sub">Office, Windows y software original</span>
+          <span class="go">Ir a la tienda ›</span>
+        </a>
+        <a class="vg" href="https://virtualgames.store/?utm_source=links&amp;utm_medium=referral&amp;utm_campaign=links-vk" target="_blank" rel="noopener noreferrer" aria-label="Ir a Virtual Games, tienda de juegos, gift cards y suscripciones">
+          <img src="assets/virtual-games-icono.png" alt="" width="44" height="44" />
+          <b>Virtual Games</b>
+          <span class="sub">Juegos, gift cards y suscripciones</span>
+          <span class="go">Ir a la tienda ›</span>
+        </a>
+      </div>
 
       <!-- Button 2 — Club Virtual Keys -->
       <a
@@ -708,7 +712,7 @@
 
       <!-- Button 4 — Ticket Asistencia Técnica -->
       <a
-        href="https://docs.google.com/forms/d/e/1FAIpQLSc9-w9YjhkggHvXtKYYxwTIEufYXwC5oOIGlDktNsFlfMdbDA/viewform?usp=header"
+        href="https://portal.virtualkeys.store/ticket"
         class="btn btn-ticket"
         target="_blank"
         rel="noopener noreferrer"
@@ -743,15 +747,10 @@
         <a href="https://virtualkeys.store/products/microsoft-office-365-profesional-plus-cuenta-original" class="product-card" target="_blank" rel="noopener noreferrer">
           <div class="product-img-wrap">
             <img class="product-img" src="https://cdn.shopify.com/s/files/1/0720/6925/1288/files/Microsoft_Office_365.webp?v=1766022334" alt="Microsoft Office 365" loading="lazy" />
-            <span class="product-badge">Oferta</span>
           </div>
           <div class="product-info">
             <span class="product-name">Microsoft Office 365 - 5 PC</span>
-            <div class="product-price">
-              <span class="product-price-current">$15.990</span>
-              <span class="product-price-compare">$19.990</span>
-              <span class="product-discount">-20%</span>
-            </div>
+            <div class="product-price"><span class="product-cta">Ver precio ›</span></div>
           </div>
         </a>
 
@@ -759,31 +758,21 @@
         <a href="https://virtualkeys.store/products/licencia-windows-11-pro-retail-flexibilidad-seguridad" class="product-card" target="_blank" rel="noopener noreferrer">
           <div class="product-img-wrap">
             <img class="product-img" src="https://cdn.shopify.com/s/files/1/0720/6925/1288/files/licencia_original_windows_11_pro_original.webp?v=1766022334" alt="Licencia Windows 11 Pro Retail" loading="lazy" />
-            <span class="product-badge">Oferta</span>
           </div>
           <div class="product-info">
             <span class="product-name">Windows 11 Pro Retail</span>
-            <div class="product-price">
-              <span class="product-price-current">$14.112</span>
-              <span class="product-price-compare">$18.990</span>
-              <span class="product-discount">-26%</span>
-            </div>
+            <div class="product-price"><span class="product-cta">Ver precio ›</span></div>
           </div>
         </a>
 
         <!-- Canva Edu -->
         <a href="https://virtualkeys.store/products/canva-edu-diseno-grafico-profesional" class="product-card" target="_blank" rel="noopener noreferrer">
           <div class="product-img-wrap">
-            <img class="product-img" src="https://cdn.shopify.com/s/files/1/0720/6925/1288/files/activarlicenciacanva.webp?v=1766022334" alt="Canva Edu" loading="lazy" />
-            <span class="product-badge">Oferta</span>
+            <img class="product-img" src="https://cdn.shopify.com/s/files/1/0720/6925/1288/files/activarlicenciacanva.webp?v=1766022334" alt="Canva" loading="lazy" />
           </div>
           <div class="product-info">
-            <span class="product-name">Canva Edu - Diseño Gráfico Profesional</span>
-            <div class="product-price">
-              <span class="product-price-current">$15.246</span>
-              <span class="product-price-compare">$104.000</span>
-              <span class="product-discount">-85%</span>
-            </div>
+            <span class="product-name">Canva - Diseño gráfico profesional</span>
+            <div class="product-price"><span class="product-cta">Ver precio ›</span></div>
           </div>
         </a>
 
@@ -791,15 +780,10 @@
         <a href="https://virtualkeys.store/products/autodesk-autocad-1-ano-diseno-2d-3d-profesionales" class="product-card" target="_blank" rel="noopener noreferrer">
           <div class="product-img-wrap">
             <img class="product-img" src="https://cdn.shopify.com/s/files/1/0720/6925/1288/files/activarlicenciaautocad2025original.webp?v=1758679155" alt="Autodesk AutoCAD 1 Año" loading="lazy" />
-            <span class="product-badge">Oferta</span>
           </div>
           <div class="product-info">
             <span class="product-name">AutoCAD 1 Año - Diseño 2D y 3D</span>
-            <div class="product-price">
-              <span class="product-price-current">$29.931</span>
-              <span class="product-price-compare">$550.000</span>
-              <span class="product-discount">-95%</span>
-            </div>
+            <div class="product-price"><span class="product-cta">Ver precio ›</span></div>
           </div>
         </a>
 
